@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Тури</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Ласкаво просимо! Оберіть тур</h1>
+    <ul>
+        {% for tour in tours %}
+            <li>
+                <a href="{{ url_for('tour_detail', tour_id=tour.id) }}">{{ tour.name }}</a> - {{ tour.price }}$
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
